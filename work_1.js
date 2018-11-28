@@ -11,6 +11,7 @@ let numbers = st.split(separator);
 let reg = /(\d{0,3})(\d{0,3})(\d{0,4})/;
 
 for (let i = 0; i < numbers.length; i++) {
+    // debugger;
     const number = numbers[i].replace(/\D/g, '').match(reg);
     let formated = !number[2] ? number[1] : '(' + number[1] + ') ' + number[2] + (number[3] ? ' ' + number[3] : '');
     console.log(formated);

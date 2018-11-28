@@ -4,23 +4,58 @@
     и в выходной массив (acc) добавлять актеров, если их нет в нем
     Это можно проверить с помощью  acc.indexOf на равенство -1
 */
-console.log('======= 2nd home task =======');
+console.log("======= 2nd home task =======");
 
 var movies = [
     {
         title: "Batman begin",
         year: 2005,
-        casts: ["Christian Bale", "Michael Caine", "Katie Holms", "Liam Neeson", "Gary Oldman", "Cillian Murphy"]
+        casts: [
+            "Christian Bale",
+            "Michael Caine",
+            "Katie Holms",
+            "Liam Neeson",
+            "Gary Oldman",
+            "Cillian Murphy"
+        ]
     },
     {
         title: "The Dark Knight",
         year: 2008,
-        casts: ["Christian Bale", "Health Ledgre", "Aaron Eckhart", "Michael Kanie", "Maggie Gallenhal", "Gary Oldman", "Morgan Freeman"]
+        casts: [
+            "Christian Bale",
+            "Health Ledgre",
+            "Aaron Eckhart",
+            "Michael Kanie",
+            "Maggie Gallenhal",
+            "Gary Oldman",
+            "Morgan Freeman"
+        ]
     },
     {
         title: "The Dark Knight Rieses",
         year: 2012,
-        casts: ["Christian Bale", "Gary Oldman", "Joseph Gordon-Levitt", "Tom Hardy", "Anne Hathaway", "Marion Cotillard", "Morgan Freeman", "Michael Kanie"]
+        casts: [
+            "Christian Bale",
+            "Gary Oldman",
+            "Joseph Gordon-Levitt",
+            "Tom Hardy",
+            "Anne Hathaway",
+            "Marion Cotillard",
+            "Morgan Freeman",
+            "Michael Kanie"
+        ]
     }
 ];
-console.log(movies);
+const actors = movies.reduce((acc, item) => {
+    // debugger;
+    let actors = item.casts;
+    actors.forEach(actor => {
+        //   console.log(acc, item);
+        if (acc.indexOf(actor) === -1) {
+            acc.push(actor);
+        }
+    });
+    return acc;
+}, []);
+console.log(actors);
